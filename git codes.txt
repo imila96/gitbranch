@@ -1,0 +1,631 @@
+cscuser@L01-HP36 MINGW64 ~
+$ cd D:
+
+cscuser@L01-HP36 MINGW64 /d
+$ mkdir git;
+
+cscuser@L01-HP36 MINGW64 /d
+$ cd git;
+
+cscuser@L01-HP36 MINGW64 /d/git
+$ git init;
+Initialized empty Git repository in D:/git/.git/
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ touch new.java
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        new.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git add ,
+fatal: pathspec ',' did not match any files
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git add .
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   new.java
+
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git commit -m "new.java file added"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <>) not allowed
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git commit -m "new.java file added";
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <>) not allowed
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git status^C
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git config --global user.email "imbsamarakoon1996@gmail.com"
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ ^C
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git config --global user.name "imila96"
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ ^C
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git commit -m "new.java file added";
+[master (root-commit) 55106e8] new.java file added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new.java
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git branch test
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkouttest
+git: 'checkouttest' is not a git command. See 'git --help'.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkout test
+Switched to branch 'test'
+
+cscuser@L01-HP36 MINGW64 /d/git (test)
+$ git merge test
+Already up to date.
+
+cscuser@L01-HP36 MINGW64 /d/git (test)
+$ ls
+new.java
+
+cscuser@L01-HP36 MINGW64 /d/git (test)
+$ git branch csc
+
+cscuser@L01-HP36 MINGW64 /d/git (test)
+$ git checkout csc
+Switched to branch 'csc'
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git merge csc
+Already up to date.
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ ls
+new.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ touch csc.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git add .
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git commit -m "csc,java file added to csc branch"
+[csc 3a66cac] csc,java file added to csc branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 csc.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ ls
+csc.java  new.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git checkout test
+Switched to branch 'test'
+
+cscuser@L01-HP36 MINGW64 /d/git (test)
+$ ls
+new.java
+
+cscuser@L01-HP36 MINGW64 /d/git (test)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+cscuser@L01-HP36 MINGW64 /d/git (test)
+$ git remote add origin https://github.com/imila96/gitbranch.git
+
+cscuser@L01-HP36 MINGW64 /d/git (test)
+$ git branch -M master
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git push -u origin master
+Username for 'https://github.com': imila96
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 219 bytes | 219.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/imila96/gitbranch.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git add .
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git remote add origin https://github.com/imila96/gitbranch.git
+fatal: remote origin already exists.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git branch -M master
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git push -u origin master
+Username for 'https://github.com': imila96
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkout test
+error: pathspec 'test' did not match any file(s) known to git.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkout test;
+error: pathspec 'test' did not match any file(s) known to git.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkout test
+error: pathspec 'test' did not match any file(s) known to git.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkout csc
+Switched to branch 'csc'
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git remote add origin https://github.com/imila96/gitbranch.git
+fatal: remote origin already exists.
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git branch -M master
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git push -u origin master
+Username for 'https://github.com': imila96
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 257 bytes | 257.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/imila96/gitbranch.git
+   55106e8..3a66cac  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git push -u origin csc
+error: src refspec csc does not match any.
+error: failed to push some refs to 'https://github.com/imila96/gitbranch.git'
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkout csc
+error: pathspec 'csc' did not match any file(s) known to git.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkout test
+error: pathspec 'test' did not match any file(s) known to git.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git branch
+* master
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git branch csc
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ touch cscdep.java
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git add .
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkout csc
+Switched to branch 'csc'
+A       cscdep.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ touch cscdep234.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git add .
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git commit -m "cscdep234.java added to csc"
+[csc 65a1505] cscdep234.java added to csc
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 cscdep.java
+ create mode 100644 cscdep234.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ ls
+csc.java  cscdep.java  cscdep234.java  new.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git push
+fatal: The current branch csc has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin csc
+
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ ^C
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$  git push --set-upstream origin csc
+Username for 'https://github.com': imila96
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 263 bytes | 263.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'csc' on GitHub by visiting:
+remote:      https://github.com/imila96/gitbranch/pull/new/csc
+remote:
+To https://github.com/imila96/gitbranch.git
+ * [new branch]      csc -> csc
+Branch 'csc' set up to track remote branch 'csc' from 'origin'.
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ touch CscExamples.java
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git add .
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   CscExamples.java
+
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git commit -m "added Cscexamples.java"
+[master 3ed8534] added Cscexamples.java
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 CscExamples.java
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$
+Display all 5212 possibilities? (y or n)
+!                                                                        mshtml.tlb
+./                                                                       MshtmlDac.dll
+:                                                                        mshtmled.dll
+[                                                                        mshtmler.dll
+[.exe                                                                    msi.dll
+[[                                                                       MsiCofire.dll
+]]                                                                       msidcrl40.dll
+__git                                                                    msident.dll
+__git_aliased_command                                                    msidle.dll
+__git_aliases                                                            msidntld.dll
+__git_commands                                                           msieftp.dll
+__git_complete                                                           msiexec.exe
+__git_complete_fetch_refspecs                                            msihnd.dll
+__git_complete_file                                                      msiltcfg.dll
+__git_complete_force_with_lease                                          msimg32.dll
+__git_complete_index_file                                                msimsg.dll
+__git_complete_refs                                                      msimtf.dll
+__git_complete_remote_or_refspec                                         msinfo32.exe
+__git_complete_revlist                                                   msiprov.dll
+__git_complete_revlist_file                                              msisip.dll
+__git_complete_strategy                                                  msIso.dll
+__git_complete_symbol                                                    msiwer.dll
+__git_compute_all_commands                                               mskeyprotcli.dll
+__git_compute_merge_strategies                                           mskeyprotect.dll
+__git_compute_porcelain_commands                                         msls31.dll
+__git_config_get_set_variables                                           msmpeg2adec.dll
+__git_count_arguments                                                    MSMPEG2ENC.DLL
+__git_eread                                                              msmpeg2vdec.dll
+__git_find_on_cmdline                                                    MSNP.ax
+__git_find_repo_path                                                     msobjs.dll
+__git_func_wrap                                                          msoert2.dll
+__git_get_config_variables                                               MSOpusDecoder.dll
+__git_get_option_value                                                   mspaint.exe
+__git_has_doubledash                                                     mspatcha.dll
+__git_heads                                                              mspatchc.dll
+__git_index_files                                                        MSPhotography.dll
+__git_is_configured_remote                                               msports.dll
+__git_list_all_commands                                                  msprivs.dll
+__git_list_merge_strategies                                              msra.exe
+__git_list_porcelain_commands                                            msrahc.dll
+__git_ls_files_helper                                                    MsraLegacy.tlb
+__git_main                                                               msrating.dll
+__git_match_ctag                                                         MSRAWImage.dll
+__git_pretty_aliases                                                     msrdc.dll
+__git_ps1                                                                MsRdpWebAccess.dll
+__git_ps1_colorize_gitstring                                             msrle32.dll
+__git_ps1_show_upstream                                                  msscntrs.dll
+__git_reassemble_comp_words_by_ref                                       mssecuser.dll
+__git_refs                                                               mssign32.dll
+__git_refs_remotes                                                       mssip32.dll
+__git_refs2                                                              mssitlb.dll
+__git_remotes                                                            MsSpellCheckingFacility.dll
+__git_tags                                                               MsSpellCheckingHost.exe
+__git_wrap__git_main                                                     mssph.dll
+__git_wrap__gitk_main                                                    mssprxy.dll
+__gitcomp                                                                mssrch.dll
+__gitcomp_builtin                                                        mssvp.dll
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git branch phys
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkout phys
+Switched to branch 'phys'
+M       CscExamples.java
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$ notepad CscExamples.java
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$ git checkout csc
+error: Your local changes to the following files would be overwritten by checkout:
+        CscExamples.java
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$ git checkout csc
+error: Your local changes to the following files would be overwritten by checkout:
+        CscExamples.java
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$ git commit -m "added getters and setters"
+On branch phys
+Changes not staged for commit:
+        modified:   CscExamples.java
+
+no changes added to commit
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$ git add .
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$ git status
+On branch phys
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   CscExamples.java
+
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$ git checkout csc
+error: Your local changes to the following files would be overwritten by checkout:
+        CscExamples.java
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$ git checkout master
+Switched to branch 'master'
+M       CscExamples.java
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git commit -m "added getters and setters"
+[master 134a56a] added getters and setters
+ 1 file changed, 42 insertions(+)
+
+cscuser@L01-HP36 MINGW64 /d/git (master)
+$ git checkout csc
+Switched to branch 'csc'
+Your branch is up to date with 'origin/csc'.
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ ls
+csc.java  cscdep.java  cscdep234.java  new.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git merge master
+hint: Waiting for your editor to close the file...
+Merge made by the 'recursive' strategy.
+ CscExamples.java | 42 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+ create mode 100644 CscExamples.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ ls
+csc.java  cscdep.java  cscdep234.java  CscExamples.java  new.java
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ notepad CscExamples.java
+
+
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git commit -m"edited CscExamples.java file by csc"
+On branch csc
+Your branch is ahead of 'origin/csc' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+        modified:   CscExamples.java
+
+no changes added to commit
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git add .
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git status
+On branch csc
+Your branch is ahead of 'origin/csc' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   CscExamples.java
+
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git push
+
+Username for 'https://github.com': imila96
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/imila96/gitbranch.git/'
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ imila96
+bash: imila96: command not found
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git push
+Username for 'https://github.com': imila96
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 881 bytes | 881.00 KiB/s, done.
+Total 7 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To https://github.com/imila96/gitbranch.git
+   65a1505..ccaebb3  csc -> csc
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git checkout phys
+error: Your local changes to the following files would be overwritten by checkout:
+        CscExamples.java
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git commit -m "commiting 2nd time"
+[csc 1e77b0b] commiting 2nd time
+ 1 file changed, 17 insertions(+)
+
+cscuser@L01-HP36 MINGW64 /d/git (csc)
+$ git checkout phys
+Switched to branch 'phys'
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$ git push
+fatal: The current branch phys has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin phys
+
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$ ^C
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$  git push --set-upstream origin phys
+Username for 'https://github.com': imila96
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'phys' on GitHub by visiting:
+remote:      https://github.com/imila96/gitbranch/pull/new/phys
+remote:
+To https://github.com/imila96/gitbranch.git
+ * [new branch]      phys -> phys
+Branch 'phys' set up to track remote branch 'phys' from 'origin'.
+
+cscuser@L01-HP36 MINGW64 /d/git (phys)
+$  git push --set-upstream origin phys
