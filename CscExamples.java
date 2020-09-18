@@ -38,5 +38,22 @@ public class CscExamples{
 	}
 	
 	
+
+public void AddQuestionNo(CscExamples question){
+
+//add a question
+
+}
+public void RemoveQuestionNo(CscExamples question){
+
+//remove question no
+
+}
+public void EditQuestionNo(CscExamples question){
+
+//edit question no
+
+}
+
 	
 }
